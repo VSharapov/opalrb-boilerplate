@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Opalrb Boilerplate</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="https://www.ruby-lang.org/favicon.ico">
+    <style type="text/css">
+      @media (prefers-color-scheme: dark) {
+        body {background-color: black; color: white;}
+        a {filter: invert(1) brightness(0.5) invert(1);}
+      }
+    </style>
+    <script src="https://cdn.opalrb.com/opal/current/opal.js"></script>
+    <script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
+    <script type="text/ruby" src="main.rb"></script>
+    <script>
+      function rubyFunc(functionName) {
+        eval(Opal.compile(functionName + "()"));
+      }
+    </script>
+  </head>
+  <body onload="rubyFunc('main')">
+    <div id="application">
+      <button id="demoButton" onclick="rubyFunc('demoButton')">Button</button>
+      <h6>Output:</h6>
+      <div id="output"></div>
+    </div>
+    <hr />
+    <div id="readme">
+      <h1>Ruby SPA demo</h1>
+      Just a demo of a page that uses Ruby instead of JS for frontend stuff.<br />
+      Quick example of reading from the DOM, and writing to the DOM.<br />
+      <br />
+      Update: So far just trying to rip off the demos on <a href="https://opalrb.com/try/">the opal `try` page</a>.<br />
+    </div>
+  </body>
+</html>
+
